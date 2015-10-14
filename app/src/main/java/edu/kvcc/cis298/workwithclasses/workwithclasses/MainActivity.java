@@ -1,5 +1,6 @@
 package edu.kvcc.cis298.workwithclasses.workwithclasses;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mResult;
     private EditText mInput;
     private Button mSubmit;
+    private Button mActivity;
 
     private Calc myCalc;
     private double result;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         mResult = (TextView) findViewById(R.id.result_text_view);
         mInput = (EditText) findViewById(R.id.number_input);
         mSubmit = (Button) findViewById(R.id.submit_button);
+        mActivity = (Button) findViewById(R.id.new_activity_button);
         myCalc = new Calc();
 
         if (savedInstanceState != null) {
@@ -38,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
                 double input = Double.parseDouble(mInput.getText().toString());
                 result = myCalc.multiplyByFour(input);
                 mResult.setText(Double.toString(result));
+            }
+        });
+        mActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = SubActivity.newIntent(MainActivity.this, "Your a cool dude!!! WOAH!!!!!!!!!!");
+                startActivity(i);
             }
         });
     }

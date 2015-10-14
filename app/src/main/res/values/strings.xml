@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">WorkWithClasses</string>
     <string name="submit_button">Submit</string>
+    <string name="act_button">COOL!</string>
+    <string name="cool_toast">WOAH, their's that cool dude.</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
